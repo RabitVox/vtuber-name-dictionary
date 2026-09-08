@@ -1,6 +1,20 @@
 # VTuber Name Dictionary
 VTuberの名前をまとめた辞書データです。
 
+## 使い方 (Usage)
+
+[Releases](../../releases) から、使用したい辞書データをダウンロードしてください。
+
+辞書データは以下の形式で提供しています。
+
+```text
+all_yyyy-mm-dd.tsv
+```
+
+`yyyy-mm-dd` はデータの更新日を表します。
+
+ダウンロードしたTSVファイルを、使用する辞書に登録して利用してください。
+
 ## 協力 (Contributing)
 名前の追加・修正などの提案を受け付けています。
 
