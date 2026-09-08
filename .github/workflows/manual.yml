@@ -22,7 +22,11 @@ jobs:
           find tsv -maxdepth 1 -type f -name "*.tsv" -print0 \
             | xargs -0 cat > "$OUTPUT"
       
-          printf '\n' >> "$OUTPUT"
+          # ファイル末尾が改行でなければ追加
+            if [ "$(tail -c 1 "$file" | wc -l)" -eq 0 ]; then
+              printf '\n' >> "$OUTPUT"
+            fi
+          done
       
           echo "OUTPUT=$OUTPUT" >> "$GITHUB_ENV"
 
