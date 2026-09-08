@@ -19,13 +19,14 @@ jobs:
           DATE=$(date +'%Y-%m-%d')
           OUTPUT="all_${DATE}.tsv"
       
-          find tsv -maxdepth 1 -type f -name "*.tsv" -print0 \
-            | xargs -0 cat > "$OUTPUT"
+          : > "$OUTPUT"
+
+          find tsv -maxdepth 1 -type f -name "*.tsv" -print0 |
+            while IFS= read -r -d '' file; do
+              cat "$file" >> "$OUTPUT"
       
-          # ファイル末尾が改行でなければ追加
-            if [ "$(tail -c 1 "$file" | wc -l)" -eq 0 ]; then
+              # このファイルの末尾に改行を追加
               printf '\n' >> "$OUTPUT"
-            fi
           done
       
           echo "OUTPUT=$OUTPUT" >> "$GITHUB_ENV"
