@@ -26,7 +26,6 @@ for (const file of files) {
 
         const columns = line.split("\t");
 
-        // 前2カラムが存在しない行は無視
         if (columns.length < 2) {
             continue;
         }
