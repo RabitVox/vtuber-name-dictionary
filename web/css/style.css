@@ -21,9 +21,58 @@ body {
 }
 
 .header {
-    padding: 48px 0;
     background: white;
     border-bottom: 1px solid #ddd;
+}
+
+.header-inner {
+    width: min(1100px, calc(100% - 32px));
+    min-height: 76px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.site-heading {
+    display: flex;
+    flex-direction: column;
+}
+
+.site-title {
+    color: #222;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.site-description {
+    margin: 2px 0 0;
+
+    color: #777;
+    font-size: 12px;
+}
+
+.github-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: #333;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.github-link:hover {
+    color: #666;
+}
+
+.github-icon {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
 }
 
 .header h1 {
