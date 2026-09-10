@@ -1,7 +1,11 @@
 name: Release TSV
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'tsv/*.tsv'
 
 permissions:
   contents: write
